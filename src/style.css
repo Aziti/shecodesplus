@@ -4,7 +4,7 @@ font-size: 18px;
 }
 
 h1 {
-  color: #878787;
+  color: #3612d5;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -26,12 +26,11 @@ ul li {
   text-transform: capitalize;
 }
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 400px;
   margin: 30px auto;
 }
 .weather-app {
-  max-width: 600px;
-  margin: 30px auto;
+
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
@@ -62,4 +61,7 @@ top: -34px;
 }
 .weather-temperatur.active:hover {
   text-decoration:  none;
+}
+.form-control {
+  width: auto;
 }
