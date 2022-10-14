@@ -1,14 +1,16 @@
 body {
 font-family: arial, sans-serif;
 font-size: 18px;
+background-color: rgb(184, 213, 224);
 }
 
 h1 {
-  color: #3612d5;
+  color: rgb(135, 135, 135);
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
   margin-bottom: 0;
+  
 }
 ul.no-bullets {
   margin: 0;
@@ -28,12 +30,25 @@ ul li {
 .weather-app-wrapper {
   max-width: 400px;
   margin: 30px auto;
+  
 }
 .weather-app {
 
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background-color: skyblue;
+  border-radius: 20px;
+}
+.image {
+  left: 0px;
+  
+  border-radius: 20px;
+  width: 360px;
+  margin: auto;
+  display: flex;
+  padding: 2px;
+ 
 }
 .overview {
   margin-bottom: 20px;
@@ -63,5 +78,21 @@ top: -34px;
   text-decoration:  none;
 }
 .form-control {
-  width: auto;
+  width: 250px;
+  margin: 0px auto;
+  display: flex;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+
+
+
+.col-3 {
+  width: 2px;
+  height: 43px;
+  margin: 0px auto;
+  display: flex;
+  padding: 1px;
+  border-radius: 10px;
 }
