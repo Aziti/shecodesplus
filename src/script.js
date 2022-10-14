@@ -28,8 +28,23 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.dt*1000);
     iconElement.innerHTML = `http://openweathermap.org/img/wn/0${response.data.weather[0].icon}@2x.png`;
 }
+function search(city)
+{
 let apikey = "3ce33118eff34374ba718f22cafc2913";
-let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=New York.us&appid=${apikey}&units=metric`;
+let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
 let city = "Ethiopia";
 //console.log(apiurl);
 axios.get(apiurl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+    console.log(cityInputElement);
+}   
+
+search("Ethiopia");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
