@@ -8,7 +8,7 @@ function formatDate(timestamp)
     let minutes = date.getMinutes();
     if (minutes < 10) { minutes = `0${minutes}`;}
     let days = ["Sunday", "Monday", "Tuesday", "Wedensday", "Thursday", "Friday", "Saturday"];
-    let day = date.getDay();
+    let day = days[date.getDay()];
    
         return `${day} ${hours}: ${minutes}`;
 }
@@ -16,22 +16,24 @@ function formatDate(timestamp)
 function displayTemperature(response) 
 {
    // console.log(response.data.main.temp);
-    let temperatureElement = document.querySelector("#temperature");
+
     let cityElement = document.querySelector("#city");
+    let dateElement = document.querySelector("#date");
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
-    let dateElement = document.querySelector("#date");
+    let temperatureElement = document.querySelector("#temperature");
     let iconElement = document.querySelector("#icon");
-
+       
     celsiusTemperature = response.data.main.temp;
 
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
     cityElement.innerHTML = response.data.name;
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    iconElement.innerHTML = response.data.weather[0].icon;
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
     iconElement.setAttribute(`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
 }
